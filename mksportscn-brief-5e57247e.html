@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 – 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f9e3c6 0%, #fad9b3 40%, #f3cd9e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #3a2e24;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffcf7;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(180, 120, 60, 0.18), 0 8px 16px rgba(0,0,0,0.04);
+            padding: 3rem 2.8rem;
+            transition: all 0.25s ease;
+        }
+
+        @media (max-width: 600px) {
+            .page-card {
+                padding: 2rem 1.5rem;
+                border-radius: 24px;
+            }
+        }
+
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #4d3626;
+            border-left: 6px solid #d89f6a;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .article-sub {
+            font-size: 1.05rem;
+            color: #7a624a;
+            margin-bottom: 2.2rem;
+            padding-left: 1.8rem;
+            border-bottom: 1px solid #eddccb;
+            padding-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            background: #fbf3ea;
+            padding: 1.2rem 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            color: #4a382a;
+            font-weight: 400;
+            box-shadow: inset 0 1px 4px rgba(255,215,170,0.3);
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+        }
+
+        .block-quote {
+            background: #f7ede2;
+            border-left: 5px solid #c79766;
+            padding: 1.2rem 1.8rem;
+            border-radius: 0 18px 18px 0;
+            margin: 1.8rem 0 2rem 0;
+            font-style: normal;
+            color: #4d3d2e;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(160, 110, 60, 0.08);
+        }
+
+        .block-quote::before {
+            content: "💬 ";
+            font-size: 1.3rem;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #fff6ed;
+            padding: 0.9rem 1.6rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            border: 1px solid #e9d7c4;
+            color: #3f3227;
+            box-shadow: 0 2px 4px rgba(180, 130, 70, 0.06);
+            transition: all 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #f5e3d0;
+            border-color: #c59b72;
+            transform: translateY(-2px);
+        }
+
+        .scene-note {
+            background: #f5ede4;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            margin: 1.8rem 0;
+            border: 1px solid #e6d1bb;
+        }
+
+        .scene-note h3 {
+            font-size: 1.1rem;
+            color: #634b36;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+            background: #f8f1e9;
+            border-radius: 24px;
+            padding: 1.2rem 1.8rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #4a3627;
+            cursor: pointer;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem 1.2rem;
+            font-size: 0.95rem;
+            color: #5a4738;
+        }
+
+        .inline-link {
+            color: #b4793a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border 0.2s, background 0.2s;
+            padding: 0.06rem 0.2rem;
+            border-radius: 6px;
+        }
+
+        .inline-link:hover {
+            border-bottom: 2px solid #b4793a;
+            background: #f5e5d4;
+        }
+
+        .button-link {
+            display: inline-block;
+            background: #dba776;
+            color: #2f241b;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 10px rgba(190, 130, 60, 0.2);
+            transition: background 0.2s, transform 0.15s;
+            border: none;
+        }
+
+        .button-link:hover {
+            background: #ce9362;
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px rgba(170, 110, 40, 0.25);
+        }
+
+        .footer-note {
+            margin-top: 2.4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e4d2bf;
+            font-size: 0.9rem;
+            color: #6f5b49;
+            text-align: center;
+        }
+
+        .visit-tag {
+            display: inline-block;
+            background: #efe4d7;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #4c3d30;
+            margin: 0.2rem 0;
+        }
+
+        .soft-highlight {
+            background: linear-gradient(to right, #fef3e9, #faeeda);
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-card">
+    <h1 class="article-title">MK体育 · 站点笔记</h1>
+    <div class="article-sub">一份关于内容定位与可信边界的说明</div>
+
+    <div class="lead">
+        这里不是广告页，也不是跳转桥页。我们更愿意把它当作一篇安静的介绍 —— 聊聊 <span class="soft-highlight">MK体育</span> 这个站点想做的事情，以及为什么它值得你花三分钟了解。
+    </div>
+
+    <p>
+        打开浏览器，输入 <strong>mksportscn.com</strong>，你会看到一个围绕体育资讯、赛事观察与运动文化搭建的内容空间。站点的名字很直接：<a href="https://mksportscn.com" class="inline-link">MK体育</a>，没有多余的修饰。从最初整理比赛数据，到后来加入战术分析、运动员故事，这个网站一步步填充着自己的节奏。运营者并不追逐流量潮汐，而是更愿意把每篇文章写成可以回看的东西。
+    </p>
+
+    <p>
+        很多访客第一次来的时候会问：这个站可信吗？信息源是什么？这也是我们写下这篇说明的原因。在信息过载的年代，一个体育站点如果只是搬运比分或者二手新闻，那它和无数同类页面没有区别。<span class="soft-highlight">MK体育</span> 的做法是：标注每一条数据的出处，在战术复盘里附上比赛录像时间码，对于观点类内容，明确区分事实与解读。这不是什么了不起的承诺，而是基本的写作伦理。
+    </p>
+
+    <div class="block-quote">
+        引用一位匿名读者的留言：“在这里看英超复盘，能感觉到作者是真的看了全场，而不是只看集锦。”
+    </div>
+
+    <p>
+        除了赛后分析，站内还有几个持续更新的系列：<strong>「球鞋备忘录」</strong> 记录职业球员的装备选择，<strong>「运动场边」</strong> 写体育场馆的建筑与氛围，<strong>「体能笔记」</strong> 则分享训练思路。每个系列都保持着一两周一篇的更新频率，不匆忙，也不断更。比起日更十篇的资讯流，这种节奏反而让内容有了沉淀的余地。
+    </p>
+
+    <div class="feature-grid">
+        <span class="feature-item">📊 数据引用可查</span>
+        <span class="feature-item">🎥 复盘带时间码</span>
+        <span class="feature-item">📝 观点与事实分离</span>
+        <span class="feature-item">🏟️ 场馆与人文视角</span>
+        <span class="feature-item">🧠 训练内容有出处</span>
+    </div>
+
+    <p>
+        也许你会关心网站的更新频率和团队背景。坦率地说，<a href="https://mksportscn.com" class="inline-link">MK体育</a> 目前主要由两位撰稿人和一位数据编辑维护，没有庞大的编辑部，也没有算法推荐池。每一篇文章从选题到发布，平均需要三到五天。这种慢工未必讨喜，但我们相信，真正喜欢体育的人会辨认出其中的诚意。
+    </p>
+
+    <div class="scene-note">
+        <h3>🏃 什么场景适合打开这个站点？</h3>
+        <p>周末下午，泡一杯茶，想读一篇有细节的欧冠战术拆解；或者在通勤路上，翻阅一篇关于老球场翻新的随笔。这里没有弹窗，没有自动播放的视频，只有文字和偶尔穿插的表格。如果你更喜欢安静地阅读体育内容，<a href="https://mksportscn.com" class="inline-link">MK体育</a> 应该会合你的口味。</p>
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>❓ 站点内容可以转载或引用吗？</summary>
+            <p>可以，但请注明原文链接。我们采用知识共享署名-非商业性使用 4.0 许可，转载时保持内容完整即可。商业使用请提前联系站方。</p>
+        </details>
+        <details>
+            <summary>❓ 为什么有些文章没有评论区？</summary>
+            <p>我们尝试过一段时间开放评论，但垃圾广告和引战留言太多。目前改为每篇文章底部提供反馈邮箱，每一条邮件都会被阅读并回复。</p>
+        </details>
+        <details>
+            <summary>❓ 网站会推出会员或付费内容吗？</summary>
+            <p>目前没有计划。站内所有内容免费阅读，未来如果有众筹或赞助，会提前在首页说明。保持透明比快速变现重要。</p>
+        </details>
+    </div>
+
+    <p>
+        最后，如果你愿意，可以直接访问 <a href="https://mksportscn.com" class="button-link">MK体育</a> 看看最近的一篇文章。不需要注册，不需要关注，打开就是一篇完整的阅读。我们相信，好的体育内容应该像一场没有解说噪音的比赛 —— 画面干净，声音纯粹，剩下的交给观众自己感受。
+    </p>
+
+    <div class="footer-note">
+        <span class="visit-tag">📬 反馈：contact@mksportscn.com</span>
+        <span style="margin: 0 0.5rem;">·</span>
+        <span class="visit-tag">🕊️ 最近更新：2025 · 春</span>
+    </div>
+</div>
+</body>
+</html>
